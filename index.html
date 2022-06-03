@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hovsa Bodega</title>
+        <link rel="stylesheet" href="../static/style.css/">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <h2>Luftkvalitet inde i bodegaen</h2>
+        <h2 id="luftdata"></h2>
+        <img src="https://hovsabodega.dk/____impro/1/onewebmedia/QW0C8151.jpg?etag=%22c4f411-623a0a50%22&sourceContentType=image%2Fjpeg&quality=85&ignoreAspectRatio&resize=2000,1333">
+        <br>
+    </body>
+    <script>var socket = io();
+    socket.on('luftkvalitet', function(e){ document.getElementById('luftdata').innerText = e + " %"})</script>
+</html>
